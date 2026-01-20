@@ -1,0 +1,11 @@
+*.env
+*.jar
+*.log
+world/
+plugins/
+cache/
+logs/
+*.DS_Store
+.idea/
+*.iml
+.vscode/

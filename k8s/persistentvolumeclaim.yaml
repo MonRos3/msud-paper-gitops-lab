@@ -1,0 +1,7 @@
+# TODO: Create a PersistentVolumeClaim named '<yourname>-paper-world' in the '<yourname>-paper' namespace
+#
+# Requirements:
+#   - Storage: 1Gi
+#   - Access mode: ReadWriteOnce
+#
+# This will store world data so it survives pod restarts

@@ -1,0 +1,12 @@
+# TODO: Create a Deployment named '<yourname>-paper' in the '<yourname>-paper' namespace
+#
+# Requirements:
+#   - 1 replica
+#   - Use the image built by the CI pipeline
+#   - Container port: 25565
+#   - Resource requests: 1Gi memory, 500m CPU
+#   - Resource limits: 2Gi memory, 1000m CPU
+#   - Mount the ConfigMap at /server/server.properties (subPath)
+#   - Mount the PVC at /server/world
+#
+# Bonus: Add a readinessProbe using tcpSocket on port 25565

@@ -1,0 +1,9 @@
+# TODO: Create a ConfigMap named '<yourname>-paper-config' in the '<yourname>-paper' namespace
+# 
+# It should contain a server.properties file with at least:
+#   - server-port=25565
+#   - motd=A Minecraft Server
+#   - max-players=20
+#   - online-mode=false (for easier testing)
+#
+# Hint: Use the data field with a multi-line string

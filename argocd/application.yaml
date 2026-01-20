@@ -1,0 +1,9 @@
+# TODO: Create an ArgoCD Application named '<yourname>-paper'
+#
+# Requirements:
+#   - Source: your fork's repo URL
+#   - Path: k8s
+#   - Target revision: main
+#   - Destination: https://kubernetes.default.svc
+#   - Destination namespace: <yourname>-paper
+#   - Enable automated sync with prune and selfHeal

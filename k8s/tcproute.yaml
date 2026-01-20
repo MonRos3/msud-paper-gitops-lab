@@ -1,0 +1,8 @@
+# TODO: Create a TCPRoute named '<yourname>-paper-route' in the '<yourname>-paper' namespace
+#
+# Requirements:
+#   - Reference the Gateway '<yourname>-paper-gateway' as a parentRef
+#   - Route to the '<yourname>-paper' Service on port 25565
+#
+# Note: TCPRoute is in gateway.networking.k8s.io/v1alpha2
+# This may vary depending on your Gateway controller version

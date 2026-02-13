@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: paper
-          image: ghcr.io/MonRos3/msud-paper-gitops-lab:latest
+          image: ghcr.io/monros3/msud-paper-gitops-lab:latest
           ports:
             - containerPort: 25565
           resources:

@@ -1,11 +1,23 @@
 # TODO: Create a Gateway named '<yourname>-paper-gateway' in the '<yourname>-paper' namespace
 #
 # Requirements:
-#   - Reference the GatewayClass installed in your cluster 
+#   - Reference the GatewayClass installed in your cluster
 #     - Hint: check with kubectl get gatewayclass (should be envoy-gateway)
 #   - Add a listener named 'minecraft'
 #   - Protocol: TCP
-#   - Port: <your-assigned-port> 
+#   - Port: <your-assigned-port>
 #     - Note: use your assigned port in the 30000-32767 range
 #
 # Hint: Gateway API resources use the gateway.networking.k8s.io/v1 API version
+
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: monica-paper-gateway
+  namespace: mon-space
+spec:
+  gatewayClassName: envoy-gateway
+  listeners:
+    - name: minecraft
+      protocol: TCP
+      port: 30303

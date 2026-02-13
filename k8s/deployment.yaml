@@ -10,3 +10,49 @@
 #   - Mount the PVC at /server/world
 #
 # Bonus: Add a readinessProbe using tcpSocket on port 25565
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monica-paper
+  namespace: mon-space
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: monica-paper
+  template:
+    metadata:
+      labels:
+        app: monica-paper
+    spec:
+      containers:
+        - name: paper
+          image: ghcr.io/MonRos3/msud-paper-gitops-lab:latest
+          ports:
+            - containerPort: 25565
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+          volumeMounts:
+            - name: monica-paper-config
+              mountPath: /server/server.properties
+              subPath: server.properties
+            - name: world
+              mountPath: /server/world
+          readinessProbe:
+            tcpSocket:
+              port: 25565
+            initialDelaySeconds: 30
+            periodSeconds: 10
+      volumes:
+        - name: monica-paper-config
+          configMap:
+            name: monica-paper-config
+        - name: world
+          persistentVolumeClaim:
+            claimName: monica-paper-world

@@ -5,3 +5,16 @@
 #   - Port: 25565
 #   - Target port: 25565
 #   - Selector should match the Deployment's pod labels
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: monica-paper
+  namespace: mon-space
+spec:
+  type: ClusterIP
+  selector:
+    app: monica-paper
+  ports:
+    - port: 25565
+      targetPort: 25565

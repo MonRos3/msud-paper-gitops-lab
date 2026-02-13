@@ -6,3 +6,16 @@
 #
 # Note: TCPRoute is in gateway.networking.k8s.io/v1alpha2
 # This may vary depending on your Gateway controller version
+
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: TCPRoute
+metadata:
+  name: monica-paper-route
+  namespace: mon-space
+spec:
+  parentRefs:
+    - name: monica-paper-gateway
+  rules:
+    - backendRefs:
+        - name: monica-paper
+          port: 25565

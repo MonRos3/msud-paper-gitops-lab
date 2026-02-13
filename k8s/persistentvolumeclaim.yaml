@@ -5,3 +5,15 @@
 #   - Access mode: ReadWriteOnce
 #
 # This will store world data so it survives pod restarts
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: monica-paper-world
+  namespace: mon-space
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

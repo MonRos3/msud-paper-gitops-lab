@@ -56,4 +56,3 @@ spec:
         - name: world
           persistentVolumeClaim:
             claimName: monica-paper-world
-# comment to trigger pipeline
